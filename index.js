@@ -16,7 +16,7 @@ app.post('/', function (req, res) {
 
   if (!html) return res.send('No HTML specified');
 
-  pdf.create(html).toBuffer(function(err, buffer){
+  pdf.create(html, req.body).toBuffer(function(err, buffer){
     // res.writeHead(200, { 'Content-Type': 'text/html '});
 
     res.header('Content-Type', 'application/pdf');

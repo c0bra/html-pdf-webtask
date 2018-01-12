@@ -10,6 +10,8 @@ app.use(bodyParser.json());
 app.use(bodyParser.text({ type: 'text/html' }));
 // app.use(bodyParser.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
 
+app.get('/', (req, res) => res.send('Hi there'));
+
 app.post('/', function (req, res) {
   let html = req.body;
   if (req.headers['content-type'] === 'application/json') html = req.body.content;
